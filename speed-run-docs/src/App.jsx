@@ -1,13 +1,6 @@
-import { useState } from "react";
+import Gallery from "./Gallery";
+import { Profile } from "./Gallery";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <h1>speed running react docs</h1>
-    </>
-  );
+export default function App() {
+  return <Profile />;
 }
-
-export default App;
