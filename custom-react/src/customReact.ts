@@ -1,9 +1,11 @@
 // ye simulate karna hai ki jab react ko element milta hai tab to use kaise dekhta hai
 // react kya karta hai jo bhi elements hote hai uska tree banane ki koshish karta hai
 
+type RcProps = Record<string, string>;
+
 type RcElement = {
   type: string;
-  props: object;
+  props: RcProps;
   children: string;
 };
 /**
@@ -11,12 +13,19 @@ type RcElement = {
  * func(jiseRender, jahaRender)
  */
 function customRender(reactElement: RcElement, container: HTMLElement | null) {
-  const domElement = document.createElement(reactElement);
+  const domElement: HTMLElement = document.createElement(reactElement.type);
+  domElement.innerHTML = reactElement.children;
+  domElement.setAttribute("href", reactElement.props.href);
+  domElement.setAttribute("target", reactElement.props.target);
+  container?.appendChild(domElement);
 }
 
 const reactElement: RcElement = {
   type: "a",
-  props: {},
+  props: {
+    href: "https://www.google.com",
+    target: "_blank",
+  },
   children: "click me to visit google",
 };
 
