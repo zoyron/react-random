@@ -13,10 +13,26 @@ type RcElement = {
  * func(jiseRender, jahaRender)
  */
 function customRender(reactElement: RcElement, container: HTMLElement | null) {
+  // const domElement: HTMLElement = document.createElement(reactElement.type);
+  // domElement.innerHTML = reactElement.children;
+  // domElement.setAttribute("href", reactElement.props.href);
+  // domElement.setAttribute("target", reactElement.props.target);
+  // container?.appendChild(domElement);
+
+  /**
+   * Another modular way to write this code if for general number of attribute
+   * we can't write individual line of code for each attribute
+   * so we will be adding a loop to loop over the object of attributes
+   */
+
+  // creating the element, "a" tag in this case
   const domElement: HTMLElement = document.createElement(reactElement.type);
   domElement.innerHTML = reactElement.children;
-  domElement.setAttribute("href", reactElement.props.href);
-  domElement.setAttribute("target", reactElement.props.target);
+  for (const prop in reactElement.props) {
+    // setting the attributes for the tag, "a" tag in this case
+    // attributes like href, target etc
+    domElement.setAttribute(prop, reactElement.props[prop]);
+  }
   container?.appendChild(domElement);
 }
 
