@@ -49,3 +49,11 @@ const reactElement: RcElement = {
 const mainContainer: HTMLElement | null = document.querySelector("#root");
 
 customRender(reactElement, mainContainer);
+
+/**
+ * Everything in javascript is an object
+ * You're not writing typescript, it just a better/cleaner way of writing javascript
+ * typescript compiles to javascript only at the end
+ */
+
+// between the curly braces you write evaluated expression, you dont write javascript
