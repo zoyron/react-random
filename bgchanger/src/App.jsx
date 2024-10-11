@@ -32,6 +32,27 @@ function App() {
             >
               Blue
             </button>
+            <button
+              className="outline-none text-white p-2 rounded-md"
+              style={{ backgroundColor: "#ffaf00" }}
+              onClick={() => setColor("#ffaf00")}
+            >
+              Yellow
+            </button>
+            <button
+              className="outline-none text-white p-2 rounded-md"
+              style={{ backgroundColor: "#008080" }}
+              onClick={() => setColor("#008080")}
+            >
+              Teal
+            </button>
+            <button
+              className="outline-none text-white p-2 rounded-md"
+              style={{ backgroundColor: "#000000" }}
+              onClick={() => setColor("#000000")}
+            >
+              Black
+            </button>
           </div>
         </div>
       </div>
